@@ -1,0 +1,289 @@
+<HTML>
+	<SCRIPT LANGUAGE="javascript">
+		 var RE=/^.+@.+\..{3}$/;       
+                   
+		 //var  EMRE=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		//var RE1=/^[a-zA-Z]+$/;
+		 var RE1=/^[A-Z][a-z]+$/;
+		var RE2=/^[6-9][0-9]+$/;
+	        function validateForm()
+     	        {
+		if(document.f1.fname.value=="")
+		{
+			window.alert("First name should not BE Empty");
+			document.f1.fname.focus();
+			return false;
+		}
+	                  else
+		if(RE1.test(document.f1.fname.value)==false)
+		{
+			window.alert("first name is in Invalid Format");
+			return false;
+		}
+	                  else
+		if(document.f1.fname.value.length<6)
+		{
+			window.alert("First name must be atleast 6 characters");
+			document.f1.fname.focus();
+			return false;
+		}
+		if(document.f1.lname.value=="")
+		{
+			window.alert("Last name should not BE Empty");
+			document.f1.lname.focus();
+			return false;
+		}
+	                  else
+		if(RE1.test(document.f1.lname.value)==false)
+		{
+			window.alert("Invalid Format");
+			return false;
+		}
+	                  else
+		if(document.f1.lname.value.length<=4)
+		{
+			window.alert("Last name must be atleast 4 characters");
+			document.f1.lname.focus();
+			return false;
+		}
+	                  else
+		if(document.f1.pwd.value=="")
+		{
+			window.alert("Password should not be Empty");
+			document.f1.pwd.focus();
+			return false;
+		}	
+	                  else
+		if(document.f1.pwd.value.length<6)
+		{
+			window.alert("Password must have 6 characters");
+			document.f1.pwd.focus();
+			return false;
+		}
+	                  else
+		if(document.f1.cpwd.value!=document.f1.pwd.value)
+		{
+			window.alert("Password and confirm password must be same");
+			document.f1.cpwd.focus();
+			return false;
+		}
+	                  else
+		if(document.f1.eid.value==""||document.f1.eid.value==null)
+		{
+			window.alert("Email Id should not be empty");
+			document.f1.eid.focus();
+			return false;
+		}
+	                  else
+		if(RE.test(document.f1.eid.value)==false)
+		{
+			window.alert("Invalid EmailId");
+			document.f1.eid.focus();
+			return false;
+		}
+	                  else
+		if( RE2.test(document.f1.phno.value)==false)
+		{
+			window.alert("Enter phone number in digits only");
+			document.f1.phno.focus();
+			return false;
+		}
+	                  else
+		if(document.f1.phno.value.length<10 || document.f1.phno.value.length>10)
+		{
+			window.alert("Phone number must be 10 digits only");
+			document.f1.phno.focus();
+			return false;
+		}
+	                  else
+		if( RE2.test(document.f1.phno.value)==false)
+		{
+			window.alert("Invalid phone number");
+			return false;
+		}
+	                  else
+		if( document.f1.gender[0].checked==false && document.f1.gender[1].checked==false)
+		{
+			window.alert("Please choose gender");
+			document.f1.gender[0].focus();
+			document.f1.gender[1].focus();
+			return false;
+		}
+	                  else
+		if(document.f1.DLB1.selectedIndex==0)
+		{
+			window.alert("Please enter date of birth");
+			return false;
+		}
+	                  else
+		if(document.f1.DLB2.selectedIndex==0)
+		{
+			window.alert("Please enter month");
+			return false;
+		}
+	                  else
+		if(document.f1.DLB3.selectedIndex==0)
+		{
+			window.alert("Please enter year");
+			return false;
+		}
+	                  else
+		if((document.f1.LB[0].checked==false) && (document.f1.LB[1].checked==false) && (document.f1.LB[2].checked==false) && (document.f1.LB[3].checked==false))
+		{
+			window.alert("Please enter languages known");
+			document.f1.LB[0].focus();
+			document.f1.LB[1].focus();
+			document.f1.LB[2].focus();
+			document.f1.LB[3].focus();
+			return false;
+		}
+	                  else
+		if(document.f1.addr.value=="")
+		{
+			window.alert("Please enter your address");
+			document.f1.addr.focus();
+			return false;
+		}
+	                  else
+		{
+			window.alert("Ur entire Given input is VALIDD....!");
+			return true;
+		}
+	        }
+	</SCRIPT>
+	<BODY BGCOLOR="lightcyan" text='red'>
+		<FORM NAME="f1" onSubmit="return validateForm();" ACTION="LOGIN.html" METHOD="POST">
+			<TABLE border="2" bordercolor="blue"  align="center">
+			<CAPTION>  <h3> WELCOME TO REGISTRATION PAGE </h3> </CAPTION>
+				<TR>
+					<TD>First Name</TD>
+					<TD><INPUT TYPE="text" NAME="fname"/></TD>
+				</TR>
+				<TR>
+					<TD>Last Name</TD>
+					<TD><INPUT TYPE="text" NAME="lname"/></TD>
+				</TR>
+				<TR>
+					<TD>Password</TD>
+					<TD><INPUT  TYPE="password" NAME="pwd"/></TD>
+				</TR>
+				<TR>
+					<TD>Confirm Password</TD>
+					<TD><INPUT  TYPE="password" NAME="cpwd"/></TD>
+				</TR>
+				<TR>
+					<TD>Email id:</TD>
+					<TD><INPUT TYPE="text" NAME="eid"/></TD>
+				</TR>
+				<TR>
+					<TD>Phone Number:</TD>
+					<TD><INPUT TYPE="text" NAME="phno"></TD>
+				</TR>
+				<TR>
+					<TD>Gender</TD>
+					<TD><INPUT TYPE="radio" NAME="gender">Male
+					<INPUT TYPE="radio" NAME="gender">Female</TD>
+				</TR>
+				<TR>
+					<TD>Date of Birth</TD>
+					<TD>Day<SELECT  NAME="DLB1">
+						<option>CHOOSE
+						<OPTION>1
+						<OPTION>2
+						<OPTION>3
+						<OPTION>4
+						<OPTION>5
+						<OPTION>6
+						<OPTION>7
+						<OPTION>8
+						<OPTION>9
+						<OPTION>10
+						<OPTION>11
+						<OPTION>12
+						<OPTION>13
+						<OPTION>14
+						<OPTION>15
+						<OPTION>16
+						<OPTION>17
+						<OPTION>18
+						<OPTION>19
+						<OPTION>20
+						<OPTION>21
+						<OPTION>22
+						<OPTION>23
+						<OPTION>24
+						<OPTION>25
+						<OPTION>26
+						<OPTION>27
+						<OPTION>28
+						<OPTION>29
+						<OPTION>30
+						<OPTION>31
+                                                                                                            </SELECT>
+					Month<SELECT NAME="DLB2">
+						<option>CHOOSE
+						<OPTION>1
+						<OPTION>2
+						<OPTION>3
+						<OPTION>4
+						<OPTION>5
+						<OPTION>6
+						<OPTION>7
+						<OPTION>8
+						<OPTION>9
+						<OPTION>10
+						<OPTION>11
+						<OPTION>12
+                                              			 </SELECT>
+					Year<SELECT NAME="DLB3">
+						<option>CHOOSE
+						<OPTION>1990
+						<OPTION>1991
+						<OPTION>1992
+						<OPTION>1993
+						<OPTION>1994
+						<OPTION>1995
+						<OPTION>1996
+						<OPTION>1997
+						<OPTION>1998
+						<OPTION>1999
+						<OPTION>2000
+						<OPTION>2001
+						<OPTION>2002
+						<OPTION>2003
+						<OPTION>2004
+						<OPTION>2005
+						<OPTION>2006
+						<OPTION>2007
+						<OPTION>2008
+						<OPTION>2009
+						<OPTION>2010
+                                                                                                          </SELECT>
+                                                                                                </TD>
+				</TR>
+				
+				<TR>
+					<TD>Language</TD>
+					<TD>
+ 						<INPUT TYPE="checkbox" NAME="LB">English
+						<INPUT TYPE="checkbox" NAME="LB">Telegu	
+						<INPUT TYPE="checkbox" NAME="LB">Hindi
+						<INPUT TYPE="checkbox" NAME="LB">Tamil
+					</TD>
+				</TR>
+				<TR>
+					<TD>Address</TD>
+					<TD><TEXTAREA ROWS="6" COLS="20" NAME="addr"></TEXTAREA></TD>
+				</TR>
+
+				<TR>
+					<TD><INPUT TYPE="SUBMIT" VALUE="Submit"></TD>
+					<TD><INPUT TYPE="RESET" VALUE="Reset"></TD>
+				</TR>
+				
+			</TABLE>
+		</FORM>
+	</BODY>
+</HTML>
+
+						

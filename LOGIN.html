@@ -1,0 +1,68 @@
+<HTML>
+	<SCRIPT LANGUAGE="javascript">
+		var RE1=/^[a-zA-Z]+$/;
+		function validateForm1()
+     	        	{
+			if(document.f2.txt1.value=="")
+			{
+				window.alert("First name should not BE Empty");
+				document.f2.txt1.focus();
+				return false;
+			}
+	                  	                 else
+			if(RE1.test(document.f2.txt1.value)==false)
+			{
+				window.alert("Invalid Format");
+				return false;
+			}
+	                	                 else
+			if(document.f2.txt1.value.length<6)
+			{
+				window.alert("First name must be atleast 6 characters");
+				document.f2.txt1.focus();
+				return false;
+			}
+	                  	                 else
+			if(document.f2.pwd.value=="")
+			{
+				window.alert("Password should not be Empty");
+				document.f2.pwd.focus();
+				return false;
+			}
+		                  else
+			if(document.f2.pwd.value.length<6)
+			{
+				window.alert("Password must have 6 characters");
+				document.f2.pwd.focus();
+				return false;
+			}
+	                  	                 else
+			{
+				window.alert("Ur entire Given input is VALIDD....!");
+				return true;
+			}
+	       	 }	
+	</SCRIPT>
+	<BODY BGCOLOR="PINK">
+                             <h3>  YOU HAVE REGISTERED SUCCESSFULLY....! </h3>
+	<FORM  NAME="f2" onSubmit="return validateForm1();" ACTION="success.html" METHOD="POST">
+                            <TABLE ALIGN="center"BORDER="2">
+		<CAPTION> <h2> LOGIN HERE </h2>  </CAPTION>
+			<TR>
+				<TD>Username:</TD>
+				<TD><INPUT  TYPE="text" NAME="txt1"/></TD>
+			</TR>
+			<TR>
+				<TD>Password:</TD>
+				<TD><INPUT  TYPE="password"  NAME="pwd"/></TD>
+			</TR>
+			<TR>
+				<TD><INPUT  TYPE="SUBMIT"  VALUE="Submit"/></TD>
+				<TD><INPUT  TYPE="RESET"  VALUE="Reset"/><TD>
+			</TR>
+
+		</TABLE>
+	</FORM>
+	</BODY>
+
+</HTML>
